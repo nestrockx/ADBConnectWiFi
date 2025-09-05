@@ -8,18 +8,54 @@
     <name>ADBConnectWiFi</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor url="https://github.com/nestrockx">Wegielek</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
-    <description><![CDATA[
-        Enter short description for your plugin here.<br>
-        <em>most HTML tags may be used</em>
-    ]]></description>
+    <description>
+        Connect your android phone to the IDE sadlsakljdksajhflaef
+    </description>
+
+    <actions>
+        <action id="ConnectAdbWifi"
+                class="com.wegielek.adbconnectwifi.ADBConnectWiFiAction"
+                text="Connect Phone Debugging over Wi-Fi"
+                description="Connect your Android phone to ADB via Wi-Fi"/>
+
+        <action id="DisconnectAdbWifi"
+                class="com.wegielek.adbconnectwifi.ADBDisconnectWiFiAction"
+                text="Disconnect Debugging over Wi-Fi"
+                description="Disconnect your Android phone from ADB via Wi-Fi"/>
+
+        <action id="ResetDevices"
+                class="com.wegielek.adbconnectwifi.ADBResetDevicesAction"
+                text="Remove All Saved Devices"
+                description="Remove all your saved Android devices"/>
+
+        <!-- Add a top-level menu -->
+        <group id="ConnectAdbWifi.Menu"
+               text="ADB Wi-Fi"
+               popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action id="ConnectAdbWifi"
+                    class="com.wegielek.adbconnectwifi.ADBConnectWiFiAction"
+                    text="Connect Phone Debugging over Wi-Fi"
+                    description="Enable Wi-Fi debugging on a connected device"/>
+            <action id="DisconnectAdbWifi"
+                    class="com.wegielek.adbconnectwifi.ADBDisconnectWiFiAction"
+                    text="Disconnect Debugging over Wi-Fi"
+                    description="Disable Wi-Fi debugging on a connected device"/>
+            <action id="ResetDevices"
+                    class="com.wegielek.adbconnectwifi.ADBResetDevicesAction"
+                    text="Remove All Saved Devices"
+                    description="Remove all your saved Android devices"/>
+        </group>
+    </actions>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+<!--    <depends>com.android.tools.idea</depends>-->
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
