@@ -13,7 +13,7 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
     <description>
-        Connect your android phone to the IDE sadlsakljdksajhflaef
+        Connect your android phone to the IDE via ADB Wifi connection.
     </description>
 
     <actions>
@@ -60,6 +60,16 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+
+        <toolWindow
+                id="ADB Wi-Fi"
+                anchor="right"
+                factoryClass="com.wegielek.adbconnectwifi.ADBToolWindowFactory"
+                icon="/icons/adb.svg"/>
+
+        <notificationGroup id="ADB Wi-Fi"
+                           displayType="BALLOON"
+                           isLogByDefault="true"/>
 
     </extensions>
 </idea-plugin>

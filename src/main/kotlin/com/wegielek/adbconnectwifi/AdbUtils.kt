@@ -67,4 +67,10 @@ object AdbUtils {
     fun disconnectOverWifi(ip: String): String {
         return runAdbCommand("disconnect", ip)
     }
+
+    fun isDeviceConnected(ip: String): Boolean {
+        val output = runAdbCommand("devices")
+        return output.lines()
+            .any { it.startsWith(ip) && it.endsWith("device") }
+    }
 }
